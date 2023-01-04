@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/RonaldGuilhermePDS/Test-Chat2Desk/issues"
   },
-  "homepage": "https://github.com/RonaldGuilhermePDS/Test-Chat2Desk#readme"
+  "homepage": "https://github.com/RonaldGuilhermePDS/Test-Chat2Desk#readme",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
 }
