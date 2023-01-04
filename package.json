@@ -1,0 +1,22 @@
+{
+  "name": "test-chat2desk",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RonaldGuilhermePDS/Test-Chat2Desk.git"
+  },
+  "author": "RonaldGuilhermePDS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RonaldGuilhermePDS/Test-Chat2Desk/issues"
+  },
+  "homepage": "https://github.com/RonaldGuilhermePDS/Test-Chat2Desk#readme"
+}
