@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc -p tsconfig-build.json",
     "start": "node dist/server.js",
-    "test": "echo 'test'"
+    "test": "jest --passWithNoTests --runInBand --no-cache"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/RonaldGuilhermePDS/Test-Chat2Desk#readme",
   "devDependencies": {
+    "@types/jest": "^29.2.5",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
@@ -30,9 +31,11 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
     "git-commit-msg-linter": "^4.5.0",
+    "jest": "^29.3.1",
     "lefthook": "^1.2.6",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.1",
+    "ts-jest": "^29.0.3",
     "typescript": "^4.9.4"
   }
 }
