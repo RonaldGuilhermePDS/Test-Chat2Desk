@@ -1,8 +1,7 @@
 {
   "name": "test-chat2desk",
   "version": "1.0.0",
-  "description": "<p align=\"center\">",
-  "main": "index.js",
+  "description": "A Test to the Chat2Desk selective process",
   "directories": {
     "doc": "docs"
   },
