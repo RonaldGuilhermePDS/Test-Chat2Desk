@@ -1,8 +1,17 @@
 {
-  "extends": "standard-with-typescript",
+  "extends": [
+    "standard-with-typescript",
+    "plugin:prettier/recommended",
+    "plugin:node/recommended"
+  ],
   "parserOptions": {
     "project": "./tsconfig.json"
   },
+  "plugins": [
+    "import",
+    "prettier",
+    "promise"
+  ],
   "rules": {
     "import/export": "off",
     "@typescript-eslint/comma-spacing": "off",
