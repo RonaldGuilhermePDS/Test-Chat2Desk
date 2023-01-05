@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig-build.json",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "test": "echo 'test'"
   },
   "repository": {
     "type": "git",
@@ -23,11 +24,14 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-config-standard-with-typescript": "^26.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
+    "lefthook": "^1.2.6",
+    "lint-staged": "^13.1.0",
     "prettier": "^2.8.1",
     "typescript": "^4.9.4"
   }
