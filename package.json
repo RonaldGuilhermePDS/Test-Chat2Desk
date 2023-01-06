@@ -51,6 +51,7 @@
     "@prisma/client": "^4.8.1",
     "argon2": "^0.30.3",
     "express": "^4.18.2",
+    "fast-glob": "^3.2.12",
     "validator": "^13.7.0"
   }
 }
