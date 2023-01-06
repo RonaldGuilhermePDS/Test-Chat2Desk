@@ -21,6 +21,7 @@
         "endOfLine": "auto"
       }
     ],
+    "no-unreachable": "off",
     "@typescript-eslint/comma-spacing": "off",
     "@typescript-eslint/consistent-type-assertions": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
