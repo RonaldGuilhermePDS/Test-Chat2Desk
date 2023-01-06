@@ -31,4 +31,18 @@ describe("Argon2 Adapter", () => {
 
     expect(hash).toBe("any_hash");
   });
+
+  test("Should throw if argon2 throws", async () => {
+    const sut = makeSut();
+
+    jest.spyOn(argon2, "hash").mockReturnValueOnce(
+      new Promise((resolve, reject) => {
+        reject(new Error());
+      }),
+    );
+
+    const hash = sut.encrypt("any_value");
+
+    await expect(hash).rejects.toThrow();
+  });
 });
