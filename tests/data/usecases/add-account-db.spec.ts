@@ -1,5 +1,5 @@
 import { AddAccountDB } from "@/data/usecases/add-account-db";
-import { Encrypter } from "../protocols/encrypter";
+import { Encrypter } from "@/data/usecases/add-account-db-protocols";
 
 interface SutTypes {
   sut: AddAccountDB;
