@@ -6,7 +6,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "sucrase-node src/main/server.ts",
+    "local": "sucrase-node src/main/server.ts",
+    "build": "tsc -p tsconfig-build.json",
+    "up": "docker-compose up -d",
+    "down": "docker-compose stop",
     "test": "jest --passWithNoTests --runInBand --no-cache",
     "test:unit": "npm test -- --watch -c jest-unit-config.js",
     "test:integration": "npm test -- --watch -c jest-integration-config.js",

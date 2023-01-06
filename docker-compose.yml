@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  api:
+    container_name: "api"
+    build: "."
+    restart: "always"
+    ports:
+      - "3000:3000"
+    tty: true
+    volumes:
+      - ".:/app"
+
+  db:
+    container_name: "db"
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_DB: "postgres"
+    image: "postgres:15.1-bullseye"
+    restart: "always"
+    ports:
+      - "5432:5432"
+    volumes:
+      - "postgres:/var/lib/postgresql/data"
+
+volumes:
+  postgres: {}
