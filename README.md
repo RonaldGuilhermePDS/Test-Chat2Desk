@@ -86,6 +86,7 @@ the proposal is to create **an authentication system** following **good practice
 * [Lefthook](https://github.com/evilmartians/lefthook)
 * [Lint-staged](https://github.com/okonet/lint-staged)
 * [Jest](https://jestjs.io/pt-BR)
+* [Argon2](https://www.npmjs.com/package/argon2)
 * [Express](https://expressjs.com/pt-br)
 * [Prisma](https://www.prisma.io)
 * [Docker](https://www.docker.com)
