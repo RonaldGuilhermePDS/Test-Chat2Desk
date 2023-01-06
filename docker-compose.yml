@@ -3,20 +3,32 @@ version: "3.8"
 services:
   api:
     container_name: "api"
-    build: "."
-    restart: "always"
+    deploy:
+      resources:
+        limits:
+          cpus: "${DOCKER_API_CPUS:-0}"
+          memory: "${DOCKER_API_MEMORY:-0}"
+    build: 
+      context: "."
+    env_file:
+     - ".env"
+    restart: "${DOCKER_RESTART_POLICY:-unless-stopped}"
     ports:
-      - "3000:3000"
-    tty: true
+      - "${DOCKER_API_PORT_FORWARD:-127.0.0.1:3000}:${PORT:-3000}"
     volumes:
       - ".:/app"
 
   db:
     container_name: "db"
+    deploy:
+      resources:
+        limits:
+          cpus: "${DOCKER_POSTGRES_CPUS:-0}"
+          memory: "${DOCKER_POSTGRES_MEMORY:-0}"
     environment:
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "password"
-      POSTGRES_DB: "postgres"
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      POSTGRES_DB: "${POSTGRES_DB}"
     image: "postgres:15.1-bullseye"
     restart: "always"
     ports:
