@@ -9,6 +9,8 @@ export const PostgresHelper = {
   client: {} as PrismaClientConnected | any,
 
   async getConnection(): Promise<PrismaClientConnected> {
+    await this.connect();
+
     return this.client;
   },
 
@@ -20,5 +22,7 @@ export const PostgresHelper = {
 
   async disconnect(): Promise<void> {
     await this.client.$disconnect();
+
+    this.client = {};
   },
 };
