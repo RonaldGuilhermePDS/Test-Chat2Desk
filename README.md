@@ -80,16 +80,16 @@ the proposal is to create **an authentication system** following **good practice
 
 ## Built With
 
-* [TypeScript]()
-* [Eslint]()
-* [Prettier]()
-* [Lefthook]()
-* [Lint-staged]()
-* [Jest]()
-* [Express]()
-* [Prisma]()
-* [Docker]()
-* [Postgres]()
+* [TypeScript](https://www.typescriptlang.org)
+* [Eslint](https://eslint.org)
+* [Prettier](https://prettier.io/)
+* [Lefthook](https://github.com/evilmartians/lefthook)
+* [Lint-staged](https://github.com/okonet/lint-staged)
+* [Jest](https://jestjs.io/pt-BR)
+* [Express](https://expressjs.com/pt-br)
+* [Prisma](https://www.prisma.io)
+* [Docker](https://www.docker.com)
+* [Postgres](https://www.postgresql.org)
 
 ## Getting Started
 
