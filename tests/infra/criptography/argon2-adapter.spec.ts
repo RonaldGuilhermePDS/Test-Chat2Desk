@@ -9,9 +9,13 @@ jest.mock("argon2", () => ({
   },
 }));
 
+const makeSut = (): Argon2Adapter => {
+  return new Argon2Adapter();
+};
+
 describe("Argon2 Adapter", () => {
   test("Should call Argon2 with correct value", async () => {
-    const sut = new Argon2Adapter();
+    const sut = makeSut();
 
     const hashSpy = jest.spyOn(argon2, "hash");
 
@@ -21,7 +25,7 @@ describe("Argon2 Adapter", () => {
   });
 
   test("Should return a hash on success", async () => {
-    const sut = new Argon2Adapter();
+    const sut = makeSut();
 
     const hash = await sut.encrypt("any_value");
 
