@@ -87,6 +87,7 @@ the proposal is to create **an authentication system** following **good practice
 * [Lint-staged](https://github.com/okonet/lint-staged)
 * [Jest](https://jestjs.io/pt-BR)
 * [Argon2](https://www.npmjs.com/package/argon2)
+* [Validator](https://www.npmjs.com/package/validator)
 * [Express](https://expressjs.com/pt-br)
 * [Prisma](https://www.prisma.io)
 * [Docker](https://www.docker.com)
