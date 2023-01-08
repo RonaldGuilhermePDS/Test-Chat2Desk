@@ -28,6 +28,7 @@ A Test to the Chat2Desk selective process
 <li><a href="#principles">Principles</a></li>
 <li><a href="#methodologies-and-designs">Methodologies and Designs</a></li>
 <li><a href="#design-patterns">Design Patterns</a></li>
+<li><a href="#folder-structure">Folder Structure</a></li>
 <li><a href="#built-with">Built With</a></li>
 <li><a href="#getting-started">Getting Started</a><ul><li><a href="#installation">Installation</a></li></ul></li>
 </ol>
@@ -77,6 +78,55 @@ the proposal is to create **an authentication system** following **good practice
 - **Factory**
 - **Proxy**
 - **Singleton**
+
+## Folder Structure
+    .
+    ├── ...
+    ├── dist
+    ├── docs
+    ├── prisma
+    ├── src
+    │   ├── data
+    │   │   ├ protocols
+    │   │   └ usecases
+    │   │
+    │   ├── domain
+    │   │   ├ models
+    │   │   └ usecases
+    │   │
+    │   ├── infra
+    │   │   ├ criptography
+    │   │   ├ db
+    │   │   └ validators
+    │   │
+    │   ├── main
+    │   │   ├ config
+    │   │   ├ middlewares
+    │   │   └ routes
+    │   │
+    │   └── presentation
+    │       ├ controllers
+    │       ├ erros
+    │       ├ helpers
+    │       └ protocols
+    │
+    ├── tests
+    │   ├── data
+    │   │   └ usecases
+    │   │
+    │   ├── infra
+    │   │   ├ criptography
+    │   │   ├ db
+    │   │   └ validators
+    │   │
+    │   ├── main
+    │   │   ├ middlewares
+    │   │   └ routes
+    │   │
+    │   └── presentation
+    │       └ controllers
+    ├── ...
+    .
 
 ## Built With
 
