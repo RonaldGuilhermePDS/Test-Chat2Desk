@@ -1,6 +1,6 @@
 <a href="https://github.com/RonaldGuilhermePDS/Test-Chat2Desk">
 <p align="center">
-<img src="./docs/chat2desk-logo.jpeg" alt="Elixir-Logo" width="120" height="120">
+<img src="./docs/chat2desk-logo.jpeg" alt="Chat2Desk-Logo" width="120" height="120">
 </p>
 </a>
 
@@ -37,6 +37,7 @@ A Test to the Chat2Desk selective process
 ## About
 
 the proposal is to create **an authentication system** following **good practices**.
+
 ## Principles
 
 - **Single Responsibility Principle (SRP)**
@@ -50,7 +51,6 @@ the proposal is to create **an authentication system** following **good practice
 - **Keep It Simple, Silly (KISS)**
 - **Composition Over Inheritance**
 - **Small Commits**
-
 
 ## Methodologies and Designs
 
