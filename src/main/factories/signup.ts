@@ -3,8 +3,10 @@ import { EmailValidatorAdapter } from "@/infra/validators/email-validator-adapte
 import { AddAccountDB } from "@/data/usecases/add-account-db";
 import { Argon2Adapter } from "@/infra/criptography/argon2-adapter";
 import { AccountPostgresRepository } from "@/infra/db/postgres/account-repository/account";
+import { Controller } from "@/presentation/protocols/controller";
+import { LogControllerDecorator } from "@/main/decorators/log";
 
-export const makeSignUpController = (): SignUpController => {
+export const makeSignUpController = (): Controller => {
   const emailValidatorAdapter = new EmailValidatorAdapter();
   const argon2Adapter = new Argon2Adapter();
   const accountPostgresRepository = new AccountPostgresRepository();
@@ -12,6 +14,10 @@ export const makeSignUpController = (): SignUpController => {
     argon2Adapter,
     accountPostgresRepository,
   );
+  const signUpController = new SignUpController(
+    emailValidatorAdapter,
+    addAccountDB,
+  );
 
-  return new SignUpController(emailValidatorAdapter, addAccountDB);
+  return new LogControllerDecorator(signUpController);
 };
