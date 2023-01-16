@@ -1,10 +1,12 @@
 import { Controller } from "@/presentation/protocols/controller";
 import { HttpRequest, HttpResponse } from "@/presentation/protocols/http";
 import { LogControllerDecorator } from "@/main/decorators/log";
+import { LogErrorRepository } from "@/data/protocols/log-error-repository";
 
 interface SutTypes {
   sut: LogControllerDecorator;
   controllerStub: Controller;
+  logErrorRepositoryStub: LogErrorRepository;
 }
 
 const makeController = (): Controller => {
@@ -22,18 +24,32 @@ const makeController = (): Controller => {
       });
     }
   }
-
   return new ControllerStub();
+};
+
+const makeLogErrorRepository = (): LogErrorRepository => {
+  class LogErrorRepositoryStub implements LogErrorRepository {
+    async log(stack: string): Promise<void> {
+      return new Promise((resolve) => {
+        resolve();
+      });
+    }
+  }
+
+  return new LogErrorRepositoryStub();
 };
 
 const makeSut = (): SutTypes => {
   const controllerStub = makeController();
-
-  const sut = new LogControllerDecorator(controllerStub);
-
+  const logErrorRepositoryStub = makeLogErrorRepository();
+  const sut = new LogControllerDecorator(
+    controllerStub,
+    logErrorRepositoryStub,
+  );
   return {
     sut,
     controllerStub,
+    logErrorRepositoryStub,
   };
 };
 
@@ -45,8 +61,8 @@ describe("LogController Decorator", () => {
 
     const httpRequest = {
       body: {
+        email: "any_mail@mail.com",
         name: "any_name",
-        email: "any_email@mail.com",
         password: "any_password",
         passwordConfirmation: "any_password",
       },
@@ -68,6 +84,7 @@ describe("LogController Decorator", () => {
         passwordConfirmation: "any_password",
       },
     };
+
     const httpResponse = await sut.handle(httpRequest);
 
     expect(httpResponse).toEqual({
