@@ -1,5 +1,9 @@
 import { SignUpController } from "@/presentation/controllers/signup/signup";
-import { MissingParamError, InvalidParamError } from "@/presentation/errors";
+import {
+  MissingParamError,
+  InvalidParamError,
+  ServerError,
+} from "@/presentation/errors";
 import {
   EmailValidator,
   AccountModel,
@@ -163,7 +167,7 @@ describe("SignUp Controller", () => {
 
     const httpResponse = await sut.handle(makeFakeRequest());
 
-    expect(httpResponse).toEqual(serverError());
+    expect(httpResponse).toEqual(serverError(new ServerError("")));
   });
 
   test("Should call AddAccount with correct values", async () => {
@@ -191,7 +195,7 @@ describe("SignUp Controller", () => {
 
     const httpResponse = await sut.handle(makeFakeRequest());
 
-    expect(httpResponse).toEqual(serverError());
+    expect(httpResponse).toEqual(serverError(new ServerError("")));
   });
 
   test("Should return 200 if valid data is provided", async () => {
